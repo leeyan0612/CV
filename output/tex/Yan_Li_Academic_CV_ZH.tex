@@ -109,9 +109,13 @@
   \vspace{0.56em}
 }
 
-\newcommand{\presentationentry}[3]{%
+\newcommand{\presentationlink}[2]{%
+  \href{#1}{\textcolor{accent}{\sffamily\bfseries\footnotesize #2}}%
+}
+
+\newcommand{\presentationentry}[4]{%
   \textbf{\mbox{#1}}\hfill\rightmeta{#3}\\[0.08em]
-  \textit{#2}
+  \textit{#2}\hfill\mbox{#4}
 }
 
 \newcommand{\teachingentry}[3]{%
@@ -201,13 +205,22 @@
   {Frontiers of Computer Science, 20(3):2003625, 2026.}
 
 \section*{学术报告}
-\presentationentry{\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}{``Trust-free Personalized Decentralized Learning''}}{IEEE BigComp 2026 口头报告，中国广州。}{2026年2月5日}
+\presentationentry{``Trust-free Personalized Decentralized Learning''}
+  {IEEE BigComp 2026 口头报告，中国广州。}
+  {2026年2月5日}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}{论文}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf}{幻灯片}}
 
 \vspace{0.45em}
-\presentationentry{``Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination''}{CINT 2026 口头报告，中国杭州。}{2026年3月16日}
+\presentationentry{``Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination''}
+  {CINT 2026 口头报告，中国杭州。}
+  {2026年5月15--17日}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/main/papers/slot-based-evidence-routing-cint-2026.pdf}{论文}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/main/slides/slot-based-evidence-routing-cint-2026.pdf}{幻灯片}}
 
 \vspace{0.45em}
-\presentationentry{``Auditing Historical Clinical Queries with Missing Availability Time''}{CCF BigData 2026 口头报告，中国哈尔滨。}{2026年8月21日}
+\presentationentry{``Auditing Historical Clinical Queries with Missing Availability Time''}
+  {CCF BigData 2026 口头报告，中国哈尔滨。}
+  {2026年8月21日}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{论文}}
 
 \section*{教学经历}
 \institutionheader{北京邮电大学}

@@ -13,7 +13,12 @@
 - [Rethink Representation Learning for Questionnaire Data](papers/questionnaire-representation-aaai-2026.pdf)
 - [FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting](papers/febt-tkde-2025.pdf)
 - [MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation](papers/medfuse-fcs-2026.pdf)
-- [Trust-free Personalized Decentralized Learning](papers/trust-free-decentralized-learning-bigcomp-2026.pdf)
+
+## Conference Presentation Materials
+
+- **IEEE BigComp 2026:** Trust-free Personalized Decentralized Learning ([Paper](papers/trust-free-decentralized-learning-bigcomp-2026.pdf) | [Slides](slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf))
+- **CINT 2026:** Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination ([Paper](papers/slot-based-evidence-routing-cint-2026.pdf) | [Slides](slides/slot-based-evidence-routing-cint-2026.pdf))
+- **CCF BigData 2026:** Auditing Historical Clinical Queries with Missing Availability Time ([Paper](papers/chronoguard-ehr-ccf-bigdata-2026.pdf))
 
 ## Manuscript Under Review
 
