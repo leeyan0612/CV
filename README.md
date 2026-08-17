@@ -11,3 +11,7 @@
 - [FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting](papers/febt-tkde-2025.pdf)
 - [MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation](papers/medfuse-fcs-2026.pdf)
 - [Trust-free Personalized Decentralized Learning](papers/trust-free-decentralized-learning-bigcomp-2026.pdf)
+
+## Manuscript Under Review
+
+- [What Do Multiple-Choice Medical Fairness Benchmarks Measure? Selective Dependence and Surface-Dependent Audit Displacement](papers/what-do-medical-fairness-benchmarks-measure.pdf)
