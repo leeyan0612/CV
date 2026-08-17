@@ -1,0 +1,12 @@
+.DS_Store
+/Education/
+/Honors and Awards/
+/Presentation/
+/Publication/
+/Research Interest/
+/Teaching Experience/
+/tmp/
+/output/pdf/*
+!/output/pdf/Yan_Li_Academic_CV.pdf
+/output/tex/*
+!/output/tex/Yan_Li_Academic_CV.tex
