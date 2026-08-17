@@ -2,6 +2,7 @@
 
 - [Academic CV (PDF)](output/pdf/Yan_Li_Academic_CV.pdf)
 - [TeX source](output/tex/Yan_Li_Academic_CV.tex)
+- [Google Scholar](https://scholar.google.com/citations?user=LZgGl1kAAAAJ&hl=zh-CN)
 
 ## Full-Text Publications
 
