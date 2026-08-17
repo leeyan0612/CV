@@ -8,5 +8,7 @@
 /tmp/
 /output/pdf/*
 !/output/pdf/Yan_Li_Academic_CV.pdf
+!/output/pdf/Yan_Li_Academic_CV_ZH.pdf
 /output/tex/*
 !/output/tex/Yan_Li_Academic_CV.tex
+!/output/tex/Yan_Li_Academic_CV_ZH.tex

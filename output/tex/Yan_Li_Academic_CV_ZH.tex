@@ -1,0 +1,224 @@
+% !TeX program = lualatex
+\documentclass[UTF8,10pt,a4paper,fontset=fandol]{ctexart}
+
+\usepackage[a4paper,margin=0.72in]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{muted}{HTML}{555555}
+\definecolor{rulegray}{HTML}{D7DCE2}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.025}
+\emergencystretch=1.5em
+\setlist[itemize]{leftmargin=1.3em,itemsep=0.24em,topsep=0.22em,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=2.05em,itemsep=0.45em,topsep=0.28em,parsep=0pt,partopsep=0pt}
+\renewcommand{\arraystretch}{1.1}
+\RaggedRight
+
+\titleformat{\section}
+  {\large\sffamily\bfseries\color{accent}}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.05em}\color{rulegray}\titlerule]
+\titlespacing*{\section}{0pt}{1.15em}{0.78em}
+
+\newcommand{\rightmeta}[1]{{\color{muted}\small\mbox{#1}}}
+
+\newcommand{\alignedline}[2]{%
+  \noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    #1 & \rightmeta{#2}
+  \end{tabular*}%
+}
+
+\newcommand{\institutionheader}[1]{%
+  \par\noindent{\sffamily\bfseries\color{accent}#1}\par\vspace{0.22em}
+}
+
+\newcommand{\corrmark}{\textsuperscript{\textcolor{accent}{*}}}
+\newcommand{\corrauth}[1]{#1\corrmark}
+\newcommand{\paperlink}[2]{\href{#1}{\textcolor{black}{#2}}}
+
+\newcommand{\educationentry}[5]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+    \textbf{#1} & \rightmeta{#4 \, | \, #5}\\[0.08em]
+    \multicolumn{2}{@{}l@{}}{\textit{#2}}\\[0.08em]
+    \multicolumn{2}{@{}l@{}}{\textit{#3}}
+  \end{tabularx}
+}
+
+\newcommand{\researchentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+    \textbf{#1} & \rightmeta{#2}\\[0.08em]
+    \multicolumn{2}{@{}l@{}}{\textit{#3}}
+  \end{tabularx}
+  \begin{itemize}[leftmargin=1.15em,itemsep=0.12em,topsep=0.16em,parsep=0pt,partopsep=0pt]
+    #4
+  \end{itemize}
+  \vspace{0.28em}
+}
+
+\newcommand{\venuebadge}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{2.2pt}%
+  \colorbox{accent!10}{\textcolor{accent}{\sffamily\bfseries\footnotesize #1}}%
+  \endgroup
+}
+
+\newcommand{\topvenuebadge}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{2.2pt}%
+  \colorbox{accent}{\textcolor{white}{\sffamily\bfseries\footnotesize #1}}%
+  \endgroup
+}
+
+\newcommand{\pubentry}[4]{%
+  \par\noindent
+  \begin{minipage}{\textwidth}
+    \venuebadge{#1}\hspace{0.3em}\textbf{#2}\\[0.08em]
+    #3\\[0.08em]
+    {\color{muted}\textit{#4}}
+  \end{minipage}\par
+  \vspace{0.56em}
+}
+
+\newcommand{\toppubentry}[4]{%
+  \par\noindent
+  \begin{minipage}{\textwidth}
+    \topvenuebadge{#1}\hspace{0.3em}\textbf{#2}\\[0.08em]
+    #3\\[0.08em]
+    {\color{muted}\textit{#4}}
+  \end{minipage}\par
+  \vspace{0.56em}
+}
+
+\newcommand{\presentationentry}[3]{%
+  \textbf{\mbox{#1}}\hfill\rightmeta{#3}\\[0.08em]
+  \textit{#2}
+}
+
+\newcommand{\teachingentry}[3]{%
+  \alignedline{\textbf{#1}}{#2}\par\vspace{0.08em}
+  \textit{助教，#3}\par\vspace{0.42em}
+}
+
+\newcommand{\honorentry}[2]{%
+  \alignedline{\textbf{#1}}{#2}\par\vspace{0.3em}
+}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{24}{28}\selectfont\bfseries Yan Li}\\[5pt]
+  北京邮电大学经济管理学院\\
+  中国北京 \quad | \quad \href{mailto:liyanly@bupt.edu.cn}{liyanly@bupt.edu.cn}
+  \quad | \quad \href{https://scholar.google.com/citations?user=LZgGl1kAAAAJ\&hl=zh-CN}{Google Scholar}
+\end{center}
+
+\section*{研究方向}
+可信医疗人工智能；医疗多模态人工智能；医学视觉语言模型；临床 AI 智能体。
+
+\section*{教育背景}
+\educationentry
+  {北京邮电大学}
+  {管理科学与工程硕士}
+  {导师：Yawen Li；联合导师：Guanhua Ye}
+  {2025年9月至今}
+  {中国北京}
+
+\vspace{0.45em}
+\educationentry
+  {电子科技大学}
+  {金融学与电子信息工程双学士}
+  {导师：Bo Liu}
+  {2021年9月至2025年7月}
+  {中国成都}
+
+\section*{研究经历}
+\researchentry
+  {CAPRA：缺失临床元数据条件下的多模态审计}
+  {ACM MM 2026 口头报告}
+  {学生研究负责人，北京邮电大学}
+  {\item 主导 CAPRA 的设计与实现，通过融合医学图像、代理属性轴 token 与校准后验，对元数据缺失场景开展子群审计。
+   \item 在分布偏移条件下，于眼底、皮肤镜和胸部 X 光任务上完成验证，并在 15 个模型-数据集组合中的 14 个提升最差子群准确率。}
+
+\researchentry
+  {\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/what-do-medical-fairness-benchmarks-measure.pdf}{面向医疗大语言模型公平性的选择性依赖审计}}
+  {审稿中}
+  {学生研究负责人，北京邮电大学}
+  {\item 主导选择性依赖审计框架，将医疗大语言模型输出拆分为医学判断、就诊路径、支持措施与界面效应，以区分应被抑制的依赖关系和合理的临床适应。
+   \item 构建 ClinSDA-400，并在语义标签、JSON 和 MCQ 格式下评估 6 个大语言模型、共 1,075,020 条响应，定位由选项顺序和答案符号映射引起的审计偏移。}
+
+\researchentry
+  {MedFuse：面向视网膜病灶分割的解剖先验融合}
+  {FCS 2026}
+  {学生研究负责人，北京邮电大学}
+  {\item 与北京大学第一医院眼科医生协作，主导技术研发，融合 RGB 眼底特征与视网膜血管先验，实现糖尿病视网膜病变病灶分割。
+   \item 在 DDR 和 IDRiD 数据集及 5 种骨干网络上评估层次化双编码器融合流程，并引入多模态大语言模型生成的免标注先验。}
+
+\section*{同行评审论文}
+
+\toppubentry{ACM MM 2026 ORAL}
+  {\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/capra-acm-mm-2026.pdf}{Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}}
+  {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
+  {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
+
+\toppubentry{ACM MM 2026}
+  {\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/vqa-evaluator-acm-mm-2026.pdf}{What Does Your Short-Answer VQA Score Actually Measure? Evaluator-Dependent Instability in Multimodal Short-Answer Benchmarks}}
+  {Guanhua Ye, Jingbin Niu, \textbf{Yan Li}, Meiyu Liang, Zhe Xue, Yingxia Shao, and \corrauth{Yawen Li}.}
+  {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
+
+\toppubentry{AAAI 2026}
+  {\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/questionnaire-representation-aaai-2026.pdf}{Rethink Representation Learning for Questionnaire Data}}
+  {Guanhua Ye, Jifeng He, \textbf{Yan Li}, Junping Du, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Yawen Li}.}
+  {Proceedings of the AAAI Conference on Artificial Intelligence, 40(33):27782--27790, 2026.}
+
+\toppubentry{TKDE 2025}
+  {\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/febt-tkde-2025.pdf}{FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting}}
+  {Yawen Li, Mengyu Zhuang, \corrauth{Guanhua Ye}, \textbf{Yan Li}, Junheng Wang, Jinyi Zhou, and Pengfei Zhang.}
+  {IEEE Transactions on Knowledge and Data Engineering, 2025.}
+
+\pubentry{FCS 2026}
+  {\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/medfuse-fcs-2026.pdf}{MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}}
+  {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
+  {Frontiers of Computer Science, 20(3):2003625, 2026.}
+
+\section*{学术报告}
+\presentationentry{\paperlink{https://github.com/leeyan0612/CV/raw/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}{``Trust-free Personalized Decentralized Learning''}}{IEEE BigComp 2026 口头报告，中国广州。}{2026年2月5日}
+
+\vspace{0.45em}
+\presentationentry{``Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination''}{CINT 2026 口头报告，中国杭州。}{2026年3月16日}
+
+\vspace{0.45em}
+\presentationentry{``Auditing Historical Clinical Queries with Missing Availability Time''}{CCF BigData 2026 口头报告，中国哈尔滨。}{2026年8月21日}
+
+\section*{教学经历}
+\institutionheader{北京邮电大学}
+\teachingentry{大数据与智能管理}{2025年秋季}{研究生课程，经济管理学院}
+\teachingentry{操作系统}{2026年春季}{本科生课程，计算机学院}
+
+\section*{荣誉与奖励}
+\institutionheader{电子科技大学}
+\honorentry{荣誉研究证书}{2025年}
+\honorentry{经济与管理学院“学术之星”（唯一获奖者）}{2024年}
+\honorentry{优秀学生奖学金}{2024年}
+\honorentry{模范学生奖学金}{2023年}
+
+\end{document}
