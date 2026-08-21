@@ -128,8 +128,10 @@
 }
 
 \newcommand{\presentationentry}[4]{%
-  \textbf{\mbox{#1}}\hfill\rightmeta{#3}\\[0.08em]
-  \textit{#2}\hfill\mbox{#4}
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+    \textbf{#1} & \rightmeta{#3}\\[0.08em]
+    \textit{#2} & \mbox{#4}
+  \end{tabularx}\par
 }
 
 \newcommand{\teachingentry}[3]{%
@@ -233,7 +235,7 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
 \presentationentry{``Auditing Historical Clinical Queries with Missing Availability Time''}
   {Oral Presentation at CCF BigData 2026, Harbin, China.}
   {Aug. 2026}
-  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{Paper}}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}{Slides}}
 
 \section*{Teaching}
 \institutionheader{Beijing University of Posts and Telecommunications}

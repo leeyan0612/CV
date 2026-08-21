@@ -18,7 +18,7 @@
 
 - **IEEE BigComp 2026:** Trust-free Personalized Decentralized Learning ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf))
 - **CINT 2026:** Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/slot-based-evidence-routing-cint-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/slot-based-evidence-routing-cint-2026.pdf))
-- **CCF BigData 2026:** Auditing Historical Clinical Queries with Missing Availability Time ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf))
+- **CCF BigData 2026:** Auditing Historical Clinical Queries with Missing Availability Time ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf))
 
 ## Manuscript Under Review
 
