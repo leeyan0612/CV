@@ -122,7 +122,7 @@
 
 \newcommand{\teachingentry}[3]{%
   \alignedline{\textbf{#1}}{#2}\par\vspace{0.08em}
-  \textit{助教，#3}\par\vspace{0.42em}
+  \textit{课程助教（TA），#3}\par\vspace{0.42em}
 }
 
 \newcommand{\honorentry}[2]{%
@@ -134,12 +134,12 @@
 \begin{center}
   {\fontsize{24}{28}\selectfont\bfseries Yan Li}\\[5pt]
   北京邮电大学经济管理学院\\
-  中国北京 \quad | \quad \href{mailto:liyanly@bupt.edu.cn}{liyanly@bupt.edu.cn}
+  北京 \quad | \quad \href{mailto:liyanly@bupt.edu.cn}{liyanly@bupt.edu.cn}
   \quad | \quad \href{https://scholar.google.com/citations?user=LZgGl1kAAAAJ\&hl=zh-CN}{Google Scholar}
 \end{center}
 
 \section*{研究方向}
-可信医疗人工智能；医疗多模态人工智能；医学视觉语言模型；临床 AI 智能体。
+可信医疗 AI；多模态医疗 AI；医学视觉-语言模型；临床 AI Agent。
 
 \section*{教育背景}
 \educationentry
@@ -147,41 +147,41 @@
   {管理科学与工程硕士}
   {导师：\href{https://teacher.bupt.edu.cn/liyawen}{Yawen Li}；联合导师：\href{https://teacher.bupt.edu.cn/yeguanhua}{Guanhua Ye}}
   {2025年9月至今}
-  {中国北京}
+  {北京}
 
 \vspace{0.45em}
 \educationentry
   {电子科技大学}
-  {金融学与电子信息工程双学士}
-  {导师：\href{https://www.mgmt.uestc.edu.cn/mgmt/jsnry.jsp?urltype=news.NewsContentUrl\&wbtreeid=1020\&wbnewsid=12383}{Bo Liu}}
+  {金融学、电子信息工程双学士学位}
+  {毕业论文导师：\href{https://www.mgmt.uestc.edu.cn/mgmt/jsnry.jsp?urltype=news.NewsContentUrl\&wbtreeid=1020\&wbnewsid=12383}{Bo Liu}}
   {2021年9月至2025年7月}
-  {中国成都}
+  {成都}
 
 \section*{研究经历}
 \researchentry
   {CAPRA：缺失临床元数据条件下的多模态审计}
-  {ACM MM 2026 口头报告}
-  {学生研究负责人，北京邮电大学}
-  {\item 主导 CAPRA 的设计与实现，通过融合医学图像、代理属性轴 token 与校准后验，对元数据缺失场景开展子群审计。
-   \item 在分布偏移条件下，于眼底、皮肤镜和胸部 X 光任务上完成验证，并在 15 个模型-数据集组合中的 14 个提升最差子群准确率。}
+  {ACM MM 2026 Oral}
+  {Lead Student Researcher，北京邮电大学}
+  {\item 主导 CAPRA 的设计与实现，构建融合医学图像、proxy-axis token 与校准后验概率的语义-视觉多模态框架，用于缺失元数据条件下的子群审计。
+   \item 在眼底摄影、皮肤镜及胸部 X 线三类医学影像任务上开展分布偏移评测，并在 15 个模型-数据集组合中的 14 个组合上提升 worst-group accuracy。}
 
 \researchentry
   {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/what-do-medical-fairness-benchmarks-measure.pdf}{面向医疗大语言模型公平性的选择性依赖审计}}
-  {审稿中}
-  {学生研究负责人，北京邮电大学}
-  {\item 主导选择性依赖审计框架，将医疗大语言模型输出拆分为医学判断、就诊路径、支持措施与界面效应，以区分应被抑制的依赖关系和合理的临床适应。
-   \item 构建 ClinSDA-400，并在语义标签、JSON 和 MCQ 格式下评估 6 个大语言模型、共 1,075,020 条响应，定位由选项顺序和答案符号映射引起的审计偏移。}
+  {Under Review}
+  {Lead Student Researcher，北京邮电大学}
+  {\item 主导选择性依赖审计框架，将医疗 LLM 输出拆分为医学判断、就诊路径、支持措施与界面效应，以区分应被抑制的依赖关系和合理的临床适应。
+   \item 构建 ClinSDA-400，并在语义标签、JSON 和 MCQ 三种格式下评估 6 个 LLM、共 1,075,020 条响应，定位由选项顺序与答案符号映射引起的审计偏移。}
 
 \researchentry
   {MedFuse：面向视网膜病灶分割的解剖先验融合}
   {FCS 2026}
-  {学生研究负责人，北京邮电大学}
+  {Lead Student Researcher，北京邮电大学}
   {\item 与北京大学第一医院眼科医生协作，主导技术研发，融合 RGB 眼底特征与视网膜血管先验，实现糖尿病视网膜病变病灶分割。
-   \item 在 DDR 和 IDRiD 数据集及 5 种骨干网络上评估层次化双编码器融合流程，并引入多模态大语言模型生成的免标注先验。}
+   \item 在 DDR、IDRiD 数据集及 5 个 backbone 上评估层次化双编码器融合框架，并引入由多模态大语言模型生成的无标注解剖先验。}
 
 \section*{同行评审论文}
 
-\toppubentry{ACM MM 2026 ORAL}
+\toppubentry{ACM MM 2026 Oral}
   {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/capra-acm-mm-2026.pdf}{Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}}
   {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
   {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
@@ -206,23 +206,23 @@
   {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
   {Frontiers of Computer Science, 20(3):2003625, 2026.}
 
-\section*{学术报告}
+\section*{会议报告}
 \presentationentry{``Trust-free Personalized Decentralized Learning''}
-  {IEEE BigComp 2026 口头报告，中国广州。}
+  {IEEE BigComp 2026 Oral，广州。}
   {2026年2月}
-  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}{论文}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf}{幻灯片}}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf}{Slides}}
 
 \vspace{0.45em}
 \presentationentry{``Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination''}
-  {CINT 2026 口头报告，中国杭州。}
+  {CINT 2026 Oral，杭州。}
   {2026年5月}
-  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/slot-based-evidence-routing-cint-2026.pdf}{论文}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/slot-based-evidence-routing-cint-2026.pdf}{幻灯片}}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/slot-based-evidence-routing-cint-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/slot-based-evidence-routing-cint-2026.pdf}{Slides}}
 
 \vspace{0.45em}
 \presentationentry{``Auditing Historical Clinical Queries with Missing Availability Time''}
-  {CCF BigData 2026 口头报告，中国哈尔滨。}
+  {CCF BigData 2026 Oral，哈尔滨。}
   {2026年8月}
-  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{论文}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}{幻灯片}}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}{Slides}}
 
 \section*{教学经历}
 \institutionheader{北京邮电大学}
