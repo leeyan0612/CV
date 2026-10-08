@@ -1,20 +1,24 @@
-\documentclass[10pt,a4paper]{article}
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
 
-\usepackage[a4paper,margin=0.72in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage[a4paper,left=18mm,right=18mm,top=17mm,bottom=18mm,footskip=9mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{enumitem}
-\usepackage{titlesec}
+\usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{ragged2e}
 \usepackage[hidelinks]{hyperref}
 
-\definecolor{accent}{HTML}{1F4E79}
-\definecolor{muted}{HTML}{555555}
-\definecolor{rulegray}{HTML}{D7DCE2}
+\definecolor{accent}{HTML}{315F75}
+\definecolor{ink}{HTML}{303438}
+\definecolor{muted}{HTML}{666B70}
+\definecolor{rulegray}{HTML}{BEC4C8}
 
 \hypersetup{
   colorlinks=true,
@@ -22,25 +26,31 @@
   linkcolor=accent
 }
 
-\pagestyle{empty}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\fontsize{8}{10}\selectfont\color{muted}Yan Li\enspace /\enspace Academic CV}
+\fancyfoot[R]{\fontsize{8}{10}\selectfont\color{muted}\thepage}
+\renewcommand{\normalsize}{\fontsize{10.5}{14.5}\selectfont}
+\AtBeginDocument{\normalsize\color{ink}}
+\raggedbottom
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\linespread{1.025}
+\linespread{1}
 \emergencystretch=1.5em
 \setlist[itemize]{leftmargin=1.3em,itemsep=0.24em,topsep=0.22em,parsep=0pt,partopsep=0pt}
 \setlist[enumerate]{leftmargin=2.05em,itemsep=0.45em,topsep=0.28em,parsep=0pt,partopsep=0pt}
-\renewcommand{\arraystretch}{1.1}
+\renewcommand{\arraystretch}{1.08}
 \RaggedRight
 
 \titleformat{\section}
-  {\large\sffamily\bfseries\color{accent}}
+  {\fontsize{13}{16}\selectfont\bfseries\color{ink}}
   {}
   {0pt}
-  {}
-  [\vspace{0.05em}\color{rulegray}\titlerule]
-\titlespacing*{\section}{0pt}{1.15em}{0.78em}
+  {#1\nobreak\hspace{0.65em}{\color{rulegray}\leaders\hrule height 0.45pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{18pt}{9pt}
 
-\newcommand{\rightmeta}[1]{{\color{muted}\small\mbox{#1}}}
+\newcommand{\rightmeta}[1]{{\color{muted}\fontsize{9}{12}\selectfont\mbox{#1}}}
 
 \newcommand{\alignedline}[2]{%
   \noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
@@ -61,95 +71,93 @@
 }
 
 \newcommand{\institutionheader}[1]{%
-  \par\noindent{\sffamily\bfseries\color{accent}#1}\par\vspace{0.22em}
+  \par\noindent{\fontsize{9.5}{12}\selectfont\bfseries\color{muted}#1}\par\vspace{5pt}
 }
 
 \newcommand{\corrmark}{\textsuperscript{\textcolor{accent}{*}}}
 \newcommand{\corrauth}[1]{#1\corrmark}
-\newcommand{\paperlink}[2]{\href{#1}{\textcolor{black}{#2}}}
+\newcommand{\paperlink}[2]{\href{#1}{\textcolor{ink}{#2}}}
 
 \newcommand{\educationentry}[5]{%
   \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
-    \textbf{#1} & \rightmeta{#4 \, | \, #5}\\[0.08em]
-    \multicolumn{2}{@{}l@{}}{\textit{#2}}\\[0.08em]
-    \multicolumn{2}{@{}l@{}}{\textit{#3}}
+    \textbf{#1} & \rightmeta{#5}\\[2pt]
+    #2 & \rightmeta{#4}\\[2pt]
+    \multicolumn{2}{@{}l@{}}{{\fontsize{9.5}{13}\selectfont\color{muted}#3}}
   \end{tabularx}
 }
 
 \newcommand{\researchentry}[4]{%
+  \par\noindent\begin{minipage}{\textwidth}
   \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
-    \textbf{#1} & \rightmeta{#2}\\[0.08em]
-    \multicolumn{2}{@{}l@{}}{\textit{#3}}
+    \textbf{#1} & \rightmeta{#2}\\[2pt]
+    \multicolumn{2}{@{}l@{}}{{\fontsize{9.2}{12}\selectfont\color{muted}#3}}
   \end{tabularx}
-  \begin{itemize}[leftmargin=1.15em,itemsep=0.12em,topsep=0.16em,parsep=0pt,partopsep=0pt]
+  \begin{itemize}[leftmargin=1.15em,labelsep=0.55em,itemsep=4pt,topsep=5pt,parsep=0pt,partopsep=0pt]
     #4
   \end{itemize}
-  \vspace{0.28em}
+  \end{minipage}\par\vspace{11pt}
 }
 
 \newcommand{\pub}[1]{\item #1}
 
 \newcommand{\venuebadge}[1]{%
-  \begingroup
-  \setlength{\fboxsep}{2.2pt}%
-  \colorbox{accent!10}{\textcolor{accent}{\sffamily\bfseries\footnotesize #1}}%
-  \endgroup
+  {\fontsize{8.8}{11.5}\selectfont\color{muted}#1}%
 }
 
 \newcommand{\topvenuebadge}[1]{%
-  \begingroup
-  \setlength{\fboxsep}{2.2pt}%
-  \colorbox{accent}{\textcolor{white}{\sffamily\bfseries\footnotesize #1}}%
-  \endgroup
+  {\fontsize{8.8}{11.5}\selectfont\bfseries\color{accent}#1}%
 }
 
 \newcommand{\pubentry}[4]{%
   \par\noindent
   \begin{minipage}{\textwidth}
-    \venuebadge{#1}\hspace{0.3em}\textbf{#2}\\[0.08em]
-    #3\\[0.08em]
-    {\color{muted}\textit{#4}}
-  \end{minipage}\par
-  \vspace{0.56em}
+    \begin{minipage}[t]{23mm}
+      \vspace{0pt}\RaggedRight\venuebadge{#1}\par
+    \end{minipage}\hspace{4mm}%
+    \begin{minipage}[t]{\dimexpr\textwidth-27mm\relax}
+      \vspace{0pt}\RaggedRight\hyphenpenalty=10000
+      {\fontsize{10}{13}\selectfont\textbf{#2}\par}\vspace{3pt}
+      {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
+      {\fontsize{9.2}{12}\selectfont\color{muted}\textit{#4}\par}
+    \end{minipage}
+  \end{minipage}\par\vspace{9pt}
 }
 
 \newcommand{\toppubentry}[4]{%
   \par\noindent
-  \begin{minipage}{\textwidth}
-    \topvenuebadge{#1}\hspace{0.3em}\textbf{#2}\\[0.08em]
-    #3\\[0.08em]
-    {\color{muted}\textit{#4}}
-  \end{minipage}\par
-  \vspace{0.56em}
+  \begingroup
+  \let\venuebadge\topvenuebadge
+  \pubentry{#1}{#2}{#3}{#4}
+  \endgroup
 }
 
 \newcommand{\presentationlink}[2]{%
-  \href{#1}{\textcolor{accent}{\sffamily\bfseries\footnotesize #2}}%
+  \href{#1}{\textcolor{accent}{\fontsize{9}{12}\selectfont #2}}%
 }
 
 \newcommand{\presentationentry}[4]{%
-  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
-    \textbf{#1} & \rightmeta{#3}\\[0.08em]
-    \textit{#2} & \mbox{#4}
-  \end{tabularx}\par
+  \noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    {\fontsize{10}{13}\selectfont\textbf{#1}} & \rightmeta{#3}\\[2pt]
+    {\fontsize{9.5}{12.5}\selectfont\color{muted}#2} & \mbox{#4}
+  \end{tabular*}\par
 }
 
 \newcommand{\teachingentry}[3]{%
-  \alignedline{\textbf{#1}}{#2}\par\vspace{0.08em}
-  \textit{Teaching Assistant, #3}\par\vspace{0.42em}
+  \alignedline{\textbf{#1}}{#2}\par\vspace{2pt}
+  {\fontsize{9.5}{12.5}\selectfont\color{muted}Teaching Assistant, #3}\par\vspace{6pt}
 }
 
 \newcommand{\honorentry}[2]{%
-  \alignedline{\textbf{#1}}{#2}\par\vspace{0.3em}
+  \alignedline{#1}{#2}\par\vspace{4pt}
 }
 
 \begin{document}
 
 \begin{center}
-  {\fontsize{24}{28}\selectfont\bfseries Yan Li}\\[5pt]
-  Beijing University of Posts and Telecommunications \\
-  Beijing, China \quad | \quad \href{mailto:liyanly@bupt.edu.cn}{liyanly@bupt.edu.cn}
-  \quad | \quad \href{https://scholar.google.com/citations?user=LZgGl1kAAAAJ\&hl=zh-CN}{Google Scholar}
+  {\fontsize{30}{35}\selectfont Yan \textbf{Li}}\\[7pt]
+  Beijing University of Posts and Telecommunications \\[4pt]
+  {\fontsize{9.5}{13}\selectfont\color{muted}Beijing, China \quad | \quad \href{mailto:liyanly@bupt.edu.cn}{liyanly@bupt.edu.cn}
+  \quad | \quad \href{https://scholar.google.com/citations?user=LZgGl1kAAAAJ\&hl=zh-CN}{Google Scholar}}
 \end{center}
 
 \section*{Research Interests}
@@ -162,7 +170,7 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {Sept. 2025--present}
   {Beijing, China}
 
-\vspace{0.45em}
+\vspace{10pt}
 \educationentry
   {University of Electronic Science and Technology of China}
   {Dual B.S. in Finance and Electronic Information Engineering}
@@ -192,9 +200,10 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {\item Led technical development with an ophthalmologist at Peking University First Hospital, integrating RGB fundus features with retinal vascular priors for diabetic-retinopathy lesion segmentation.
    \item Evaluated a hierarchical dual-encoder fusion pipeline on DDR and IDRiD across five backbones, including annotation-free priors from a multimodal large language model.}
 
+\clearpage
 \section*{Peer-Reviewed Publications}
 
-\toppubentry{ACM MM 2026 ORAL}
+\toppubentry{ACM MM 2026\newline Oral}
   {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/capra-acm-mm-2026.pdf}{Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}}
   {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
   {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
