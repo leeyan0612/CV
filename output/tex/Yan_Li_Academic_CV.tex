@@ -44,7 +44,7 @@
 \RaggedRight
 
 \titleformat{\section}
-  {\fontsize{13}{16}\selectfont\bfseries\color{ink}}
+  {\fontsize{13}{16}\selectfont\bfseries\scshape\color{ink}}
   {}
   {0pt}
   {#1\nobreak\hspace{0.65em}{\color{rulegray}\leaders\hrule height 0.45pt\hfill\kern0pt}}
@@ -86,14 +86,13 @@
   \end{tabularx}
 }
 
-\newcommand{\researchentry}[4]{%
+\newcommand{\researchentry}[3]{%
   \par\noindent\begin{minipage}{\textwidth}
   \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
-    \textbf{#1} & \rightmeta{#2}\\[2pt]
-    \multicolumn{2}{@{}l@{}}{{\fontsize{9.2}{12}\selectfont\color{muted}#3}}
+    \textbf{#1} & \rightmeta{#2}
   \end{tabularx}
   \begin{itemize}[leftmargin=1.15em,labelsep=0.55em,itemsep=4pt,topsep=5pt,parsep=0pt,partopsep=0pt]
-    #4
+    #3
   \end{itemize}
   \end{minipage}\par\vspace{11pt}
 }
@@ -182,23 +181,19 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
 \researchentry
   {CAPRA: Multimodal Auditing under Missing Clinical Metadata}
   {ACM MM 2026 Oral}
-  {Lead Student Researcher, Beijing University of Posts and Telecommunications}
   {\item Led CAPRA, a semantic-visual multimodal framework that fuses medical images with proxy-axis tokens and calibrated posteriors for missing-metadata subgroup auditing.
    \item Validated fundus, dermoscopy, and chest-radiography tasks under distribution shift, improving worst-group accuracy in 14 of 15 learner--dataset settings.}
 
 \researchentry
-  {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/what-do-medical-fairness-benchmarks-measure.pdf}{Selective-Dependence Auditing for Medical LLM Fairness}}
-  {Under Review}
-  {Lead Student Researcher, Beijing University of Posts and Telecommunications}
-  {\item Led the Selective-Dependence Audit, separating medical judgments, care pathways, support actions, and interface effects to distinguish prohibited dependence from appropriate clinical adaptation.
-   \item Built ClinSDA-400 and evaluated six LLMs across 1,075,020 responses in semantic-label, JSON, and MCQ formats, isolating audit displacement caused by option order and answer-symbol mapping.}
-
-\researchentry
   {MedFuse: Anatomical-Prior Fusion for Retinal Lesion Segmentation}
   {FCS 2026}
-  {Lead Student Researcher, Beijing University of Posts and Telecommunications}
   {\item Led technical development with an ophthalmologist at Peking University First Hospital, integrating RGB fundus features with retinal vascular priors for diabetic-retinopathy lesion segmentation.
    \item Evaluated a hierarchical dual-encoder fusion pipeline on DDR and IDRiD across five backbones, including annotation-free priors from a multimodal large language model.}
+
+\section*{Teaching}
+\institutionheader{Beijing University of Posts and Telecommunications}
+\teachingentry{Big Data and Intelligent Management}{Fall 2025}{graduate course, School of Economics and Management}
+\teachingentry{Operating Systems}{Spring 2026}{undergraduate course, School of Computer Science}
 
 \clearpage
 \section*{Peer-Reviewed Publications}
@@ -245,11 +240,6 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {Oral Presentation at CCF BigData 2026, Harbin, China.}
   {Aug. 2026}
   {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}{Slides}}
-
-\section*{Teaching}
-\institutionheader{Beijing University of Posts and Telecommunications}
-\teachingentry{Big Data and Intelligent Management}{Fall 2025}{graduate course, School of Economics and Management}
-\teachingentry{Operating Systems}{Spring 2026}{undergraduate course, School of Computer Science}
 
 \section*{Honors and Awards}
 \institutionheader{University of Electronic Science and Technology of China}
