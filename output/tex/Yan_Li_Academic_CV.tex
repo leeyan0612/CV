@@ -105,32 +105,36 @@
   {\fontsize{8.8}{11.5}\selectfont\bfseries\color{accent}#1}%
 }
 
-\newcommand{\pubentry}[5]{%
+\newcommand{\pubentry}[6][]{%
   \par\noindent
   \begin{minipage}{\textwidth}
     \begin{minipage}[t]{23mm}
-      \vspace{0pt}\RaggedRight\venuebadge{#1}\par
+      \vspace{0pt}\RaggedRight\venuebadge{#2}\par
     \end{minipage}\hspace{4mm}%
     \begin{minipage}[t]{\dimexpr\textwidth-27mm\relax}
       \vspace{0pt}\RaggedRight\hyphenpenalty=10000
-      {\fontsize{10}{13}\selectfont\textbf{#2}\par}\vspace{3pt}
-      {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
+      {\fontsize{10}{13}\selectfont\textbf{#3}\par}\vspace{3pt}
+      {\fontsize{9.5}{12.5}\selectfont #4\par}\vspace{2pt}
       \begin{minipage}[t]{\dimexpr\linewidth-33pt\relax}
         \vspace{0pt}\RaggedRight
-        {\fontsize{9.2}{12}\selectfont\color{muted}\textit{#4}\par}
+        {\fontsize{9.2}{12}\selectfont\color{muted}\textit{#5}\par}
       \end{minipage}\hfill
       \begin{minipage}[t]{25pt}
-        \vspace{0pt}\RaggedLeft\presentationlink{#5}{Paper}\par
+        \vspace{0pt}\RaggedLeft\presentationlink{#6}{Paper}\par
       \end{minipage}
+      \if\relax\detokenize{#1}\relax\else
+        \par\vspace{4pt}
+        {\fontsize{9}{12}\selectfont\color{muted}#1\par}
+      \fi
     \end{minipage}
   \end{minipage}\par\vspace{9pt}
 }
 
-\newcommand{\toppubentry}[5]{%
+\newcommand{\toppubentry}[6][]{%
   \par\noindent
   \begingroup
   \let\venuebadge\topvenuebadge
-  \pubentry{#1}{#2}{#3}{#4}{#5}
+  \pubentry[#1]{#2}{#3}{#4}{#5}{#6}
   \endgroup
 }
 
@@ -201,7 +205,9 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
 \clearpage
 \section*{Peer-Reviewed Publications}
 
-\toppubentry{ACM MM 2026\newline Oral}
+% Oral count: 162 unique Main Track paper IDs in the official programme, checked 2026-10-11.
+% https://2026.acmmm.org/site/program-data.json
+\toppubentry[Selected as one of 162 main-track oral papers from 7,053 reviewed submissions.]{ACM MM 2026\newline Oral}
   {Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}
   {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
   {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
