@@ -30,7 +30,6 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[L]{\fontsize{8}{10}\selectfont\color{muted}李严\enspace /\enspace 学术简历}
 \fancyfoot[R]{\fontsize{8}{10}\selectfont\color{muted}\thepage}
 \renewcommand{\normalsize}{\fontsize{10.5}{14.5}\selectfont}
 \AtBeginDocument{\normalsize\color{ink}}
@@ -65,7 +64,6 @@
 
 \newcommand{\corrmark}{\textsuperscript{\textcolor{accent}{*}}}
 \newcommand{\corrauth}[1]{#1\corrmark}
-\newcommand{\paperlink}[2]{\href{#1}{\textcolor{ink}{#2}}}
 
 \newcommand{\educationentry}[5]{%
   \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
@@ -94,7 +92,7 @@
   {\fontsize{8.8}{11.5}\selectfont\bfseries\color{accent}#1}%
 }
 
-\newcommand{\pubentry}[4]{%
+\newcommand{\pubentry}[5]{%
   \par\noindent
   \begin{minipage}{\textwidth}
     \begin{minipage}[t]{23mm}
@@ -104,16 +102,22 @@
       \vspace{0pt}\RaggedRight\hyphenpenalty=10000
       {\fontsize{10}{13}\selectfont\textbf{#2}\par}\vspace{3pt}
       {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
-      {\fontsize{9.2}{12}\selectfont\color{muted}\textit{#4}\par}
+      \begin{minipage}[t]{\dimexpr\linewidth-33pt\relax}
+        \vspace{0pt}\RaggedRight
+        {\fontsize{9.2}{12}\selectfont\color{muted}\textit{#4}\par}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{25pt}
+        \vspace{0pt}\RaggedLeft\presentationlink{#5}{Paper}\par
+      \end{minipage}
     \end{minipage}
   \end{minipage}\par\vspace{9pt}
 }
 
-\newcommand{\toppubentry}[4]{%
+\newcommand{\toppubentry}[5]{%
   \par\noindent
   \begingroup
   \let\venuebadge\topvenuebadge
-  \pubentry{#1}{#2}{#3}{#4}
+  \pubentry{#1}{#2}{#3}{#4}{#5}
   \endgroup
 }
 
@@ -130,7 +134,7 @@
 
 \newcommand{\teachingentry}[3]{%
   \alignedline{\textbf{#1}}{#2}\par\vspace{2pt}
-  {\fontsize{9.5}{12.5}\selectfont\color{muted}课程助教（TA），#3}\par\vspace{6pt}
+  {\fontsize{9.5}{12.5}\selectfont\color{muted}课程助教（TA）；#3\par}\vspace{6pt}
 }
 
 \newcommand{\honorentry}[2]{%
@@ -180,36 +184,40 @@
 
 \section*{教学经历}
 \institutionheader{北京邮电大学}
-\teachingentry{大数据与智能管理}{2025年秋季}{研究生课程，经济管理学院}
-\teachingentry{操作系统}{2026年春季}{本科生课程，计算机学院}
+\teachingentry{大数据与智能管理}{2025年秋季、2026年秋季}{共同设计面向低年级硕士和博士生的课程，班级规模 130 人。}
 
 \clearpage
 \section*{同行评审论文}
 
 \toppubentry{ACM MM 2026\newline Oral}
-  {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/capra-acm-mm-2026.pdf}{Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}}
+  {Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}
   {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
   {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
+  {https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/capra-acm-mm-2026.pdf}
 
 \toppubentry{ACM MM 2026}
-  {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/vqa-evaluator-acm-mm-2026.pdf}{What Does Your Short-Answer VQA Score Actually Measure? Evaluator-Dependent Instability in Multimodal Short-Answer Benchmarks}}
+  {What Does Your Short-Answer VQA Score Actually Measure? Evaluator-Dependent Instability in Multimodal Short-Answer Benchmarks}
   {Guanhua Ye, Jingbin Niu, \textbf{Yan Li}, Meiyu Liang, Zhe Xue, Yingxia Shao, and \corrauth{Yawen Li}.}
   {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
+  {https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/vqa-evaluator-acm-mm-2026.pdf}
 
 \toppubentry{AAAI 2026}
-  {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/questionnaire-representation-aaai-2026.pdf}{Rethink Representation Learning for Questionnaire Data}}
+  {Rethink Representation Learning for Questionnaire Data}
   {Guanhua Ye, Jifeng He, \textbf{Yan Li}, Junping Du, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Yawen Li}.}
   {Proceedings of the AAAI Conference on Artificial Intelligence, 40(33):27782--27790, 2026.}
+  {https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/questionnaire-representation-aaai-2026.pdf}
 
 \toppubentry{TKDE 2025}
-  {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/febt-tkde-2025.pdf}{FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting}}
+  {FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting}
   {Yawen Li, Mengyu Zhuang, \corrauth{Guanhua Ye}, \textbf{Yan Li}, Junheng Wang, Jinyi Zhou, and Pengfei Zhang.}
   {IEEE Transactions on Knowledge and Data Engineering, 2025.}
+  {https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/febt-tkde-2025.pdf}
 
 \pubentry{FCS 2026}
-  {\paperlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/medfuse-fcs-2026.pdf}{MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}}
+  {MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}
   {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
   {Frontiers of Computer Science, 20(3):2003625, 2026.}
+  {https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/medfuse-fcs-2026.pdf}
 
 \section*{会议报告}
 \presentationentry{``Trust-free Personalized Decentralized Learning''}
