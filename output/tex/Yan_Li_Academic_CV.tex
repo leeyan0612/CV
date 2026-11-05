@@ -143,10 +143,12 @@
 }
 
 \newcommand{\presentationentry}[4]{%
-  \noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-    {\fontsize{10}{13}\selectfont\textbf{#1}} & \rightmeta{#3}\\[2pt]
-    {\fontsize{9.5}{12.5}\selectfont\color{muted}#2} & \mbox{#4}
-  \end{tabular*}\par
+  \par\noindent\begin{minipage}{\textwidth}
+  \begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}X r@{}}
+    {\fontsize{10}{13}\selectfont\textbf{#1}\par} & \rightmeta{#3}\\[2pt]
+    {\fontsize{9.5}{12.5}\selectfont\textcolor{muted}{#2}\par} & \mbox{#4}
+  \end{tabularx}
+  \end{minipage}\par
 }
 
 \newcommand{\teachingentry}[3]{%
@@ -254,6 +256,12 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {Oral Presentation at CCF BigData 2026, Harbin, China.}
   {Aug. 2026}
   {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}{Slides}}
+
+\vspace{0.45em}
+\presentationentry{``Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging''}
+  {Scheduled Oral Presentation at ACM MM 2026 (Oral SmVI).}
+  {Nov. 2026}
+  {\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/papers/capra-acm-mm-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/raw/refs/heads/main/slides/capra-acm-mm-2026.pdf}{Slides}}
 
 \section*{Honors and Awards}
 \institutionheader{University of Electronic Science and Technology of China}
