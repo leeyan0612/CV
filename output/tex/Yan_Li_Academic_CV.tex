@@ -97,45 +97,25 @@
 
 \newcommand{\pub}[1]{\item #1}
 
-\newcommand{\venuebadge}[1]{%
-  {\fontsize{8.8}{11.5}\selectfont\color{muted}#1}%
-}
-
-\newcommand{\topvenuebadge}[1]{%
-  {\fontsize{8.8}{11.5}\selectfont\bfseries\color{accent}#1}%
-}
-
-\newcommand{\pubentry}[6][]{%
+\newcommand{\pubentry}[5][]{%
   \par\noindent
   \begin{minipage}{\textwidth}
-    \begin{minipage}[t]{23mm}
-      \vspace{0pt}\RaggedRight\venuebadge{#2}\par
-    \end{minipage}\hspace{4mm}%
-    \begin{minipage}[t]{\dimexpr\textwidth-27mm\relax}
-      \vspace{0pt}\RaggedRight\hyphenpenalty=10000
-      {\fontsize{10}{13}\selectfont\textbf{#3}\par}\vspace{3pt}
-      {\fontsize{9.5}{12.5}\selectfont #4\par}\vspace{2pt}
-      \begin{minipage}[t]{\dimexpr\linewidth-33pt\relax}
-        \vspace{0pt}\RaggedRight
-        {\fontsize{9.2}{12}\selectfont\color{muted}\textit{#5}\par}
-      \end{minipage}\hfill
-      \begin{minipage}[t]{25pt}
-        \vspace{0pt}\RaggedLeft\presentationlink{#6}{Paper}\par
-      \end{minipage}
-      \if\relax\detokenize{#1}\relax\else
-        \par\vspace{4pt}
-        {\fontsize{9.5}{12.5}\selectfont\color{accent}#1\par}
-      \fi
+    \RaggedRight\hyphenpenalty=10000
+    {\fontsize{10}{13}\selectfont\textbf{#2}\par}\vspace{3pt}
+    {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
+    \begin{minipage}[t]{\dimexpr\linewidth-33pt\relax}
+      \RaggedRight\hyphenpenalty=10000
+      {\fontsize{9.2}{12}\selectfont\textcolor{muted}{#4}\par}
     \end{minipage}
+    \hfill
+    \begin{minipage}[t]{25pt}
+      \RaggedLeft\presentationlink{#5}{Paper}\par
+    \end{minipage}
+    \if\relax\detokenize{#1}\relax\else
+      \par\vspace{4pt}
+      {\fontsize{9.5}{12.5}\selectfont\color{accent}#1\par}
+    \fi
   \end{minipage}\par\vspace{9pt}
-}
-
-\newcommand{\toppubentry}[6][]{%
-  \par\noindent
-  \begingroup
-  \let\venuebadge\topvenuebadge
-  \pubentry[#1]{#2}{#3}{#4}{#5}{#6}
-  \endgroup
 }
 
 \newcommand{\presentationlink}[2]{%
@@ -209,34 +189,34 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
 
 % Oral count: 162 unique Main Track paper IDs in the official programme, checked 2026-10-11.
 % https://2026.acmmm.org/site/program-data.json
-\toppubentry[Selected as one of \textbf{162} main-track oral papers from \textbf{7,053} reviewed submissions.]{ACM MM 2026\newline Oral}
+\pubentry[\textbf{Oral presentation.} Selected as one of \textbf{162} main-track oral papers from \textbf{7,053} reviewed submissions.]
   {Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}
   {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
-  {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
+  {\textit{Proceedings of the 34th ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
   {https://github.com/leeyan0612/CV/blob/main/papers/capra-acm-mm-2026.pdf}
 
-\toppubentry{ACM MM 2026}
+\pubentry
   {What Does Your Short-Answer VQA Score Actually Measure? Evaluator-Dependent Instability in Multimodal Short-Answer Benchmarks}
   {Guanhua Ye, Jingbin Niu, \textbf{Yan Li}, Meiyu Liang, Zhe Xue, Yingxia Shao, and \corrauth{Yawen Li}.}
-  {Proceedings of the 34th ACM International Conference on Multimedia, 2026.}
+  {\textit{Proceedings of the 34th ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
   {https://github.com/leeyan0612/CV/blob/main/papers/vqa-evaluator-acm-mm-2026.pdf}
 
-\toppubentry{AAAI 2026}
+\pubentry
   {Rethink Representation Learning for Questionnaire Data}
   {Guanhua Ye, Jifeng He, \textbf{Yan Li}, Junping Du, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Yawen Li}.}
-  {Proceedings of the AAAI Conference on Artificial Intelligence, 40(33):27782--27790, 2026.}
+  {\textit{Proceedings of the AAAI Conference on Artificial Intelligence} (\textbf{AAAI}), 40(33):27782--27790, 2026.}
   {https://github.com/leeyan0612/CV/blob/main/papers/questionnaire-representation-aaai-2026.pdf}
 
-  \toppubentry{TKDE 2025}
+\pubentry
   {FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting}
   {Yawen Li, Mengyu Zhuang, \corrauth{Guanhua Ye}, \textbf{Yan Li}, Junheng Wang, Jinyi Zhou, and Pengfei Zhang.}
-  {IEEE Transactions on Knowledge and Data Engineering, 2025.}
+  {\textit{IEEE Transactions on Knowledge and Data Engineering} (\textbf{TKDE}), 2025.}
   {https://github.com/leeyan0612/CV/blob/main/papers/febt-tkde-2025.pdf}
 
-\pubentry{FCS 2026}
+\pubentry
   {MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}
   {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
-  {Frontiers of Computer Science, 20(3):2003625, 2026.}
+  {\textit{Frontiers of Computer Science} (\textbf{FCS}), 20(3):2003625, 2026.}
   {https://github.com/leeyan0612/CV/blob/main/papers/medfuse-fcs-2026.pdf}
 
 \section*{Conference Presentations}
