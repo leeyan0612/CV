@@ -2,8 +2,6 @@
 
 - [Academic CV (PDF)](https://github.com/leeyan0612/CV/blob/refs/heads/main/output/pdf/Yan_Li_Academic_CV.pdf)
 - [TeX source](https://github.com/leeyan0612/CV/blob/refs/heads/main/output/tex/Yan_Li_Academic_CV.tex)
-- [中文学术简历（PDF）](https://github.com/leeyan0612/CV/blob/refs/heads/main/output/pdf/Yan_Li_Academic_CV_ZH.pdf)
-- [中文 TeX 源文件](https://github.com/leeyan0612/CV/blob/refs/heads/main/output/tex/Yan_Li_Academic_CV_ZH.tex)
 - [Google Scholar](https://scholar.google.com/citations?user=LZgGl1kAAAAJ&hl=zh-CN)
 
 ## Full-Text Publications
@@ -19,7 +17,7 @@
 - **IEEE BigComp 2026:** Trust-free Personalized Decentralized Learning ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf))
 - **CINT 2026:** Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/slot-based-evidence-routing-cint-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/slot-based-evidence-routing-cint-2026.pdf))
 - **CCF BigData 2026:** Auditing Historical Clinical Queries with Missing Availability Time ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf))
-- **ACM MM 2026:** Hidden Subgroup Analysis under Missing Metadata in Medical Imaging ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/capra-acm-mm-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/capra-acm-mm-2026.pdf)). Rio de Janeiro, Brazil; Oral SmVI, November 14, 2026, 11:00-12:30, Oceania VI-VII; CAPRA talk: 12:12-12:30. [Official programme](https://2026.acmmm.org/site/technical-programme.html).
+- **ACM MM 2026:** Hidden Subgroup Analysis under Missing Metadata in Medical Imaging ([Poster](https://github.com/leeyan0612/CV/blob/main/posters/capra-acm-mm-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/main/slides/capra-acm-mm-2026.pdf)). Rio de Janeiro, Brazil; Oral SmVI, November 14, 2026, 11:00-12:30, Oceania VI-VII; CAPRA talk: 12:12-12:30. [Official programme](https://2026.acmmm.org/site/technical-programme.html).
 
 ## Manuscript Under Review
 
