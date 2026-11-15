@@ -97,20 +97,18 @@
 
 \newcommand{\pub}[1]{\item #1}
 
+\newsavebox{\publinks}
 \newcommand{\pubentry}[5][]{%
   \par\noindent
   \begin{minipage}{\textwidth}
     \RaggedRight\hyphenpenalty=10000
     {\fontsize{10}{13}\selectfont\textbf{#2}\par}\vspace{3pt}
     {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
-    \begin{minipage}[t]{\dimexpr\linewidth-33pt\relax}
+    \sbox{\publinks}{#5}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\wd\publinks-8pt\relax}
       \RaggedRight\hyphenpenalty=10000
       {\fontsize{9.2}{12}\selectfont\textcolor{muted}{#4}\par}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{25pt}
-      \RaggedLeft #5\par
-    \end{minipage}
+    \end{minipage}\hfill\usebox{\publinks}%
     \if\relax\detokenize{#1}\relax\else
       \par\vspace{4pt}
       {\fontsize{9.5}{12.5}\selectfont\color{accent}#1\par}
@@ -185,7 +183,7 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {Learning to ground compositional medical queries in retinal images}
   {Yawen Li, \textbf{Yan Li}, Jingbin Niu, Yingxia Shao, and \corrauth{Guanhua Ye}.}
   {In submission to \textit{Information Fusion}.}
-  {\presentationlink{https://github.com/leeyan0612/REFINE}{Code}}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/refine-retinal-grounding.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/REFINE}{Code}}
 
 \section*{Teaching}
 \institutionheader{Beijing University of Posts and Telecommunications}
