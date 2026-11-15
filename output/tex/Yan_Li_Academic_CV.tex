@@ -49,6 +49,13 @@
   {#1\nobreak\hspace{0.65em}{\color{rulegray}\leaders\hrule height 0.45pt\hfill\kern0pt}}
 \titlespacing*{\section}{0pt}{18pt}{9pt}
 
+\titleformat{\subsection}
+  {\fontsize{11}{14}\selectfont\bfseries\color{ink}}
+  {}
+  {0pt}
+  {#1}
+\titlespacing*{\subsection}{0pt}{10pt}{5pt}
+
 \newcommand{\rightmeta}[1]{{\color{muted}\fontsize{9}{12}\selectfont\mbox{#1}}}
 
 \newcommand{\alignedline}[2]{%
@@ -84,15 +91,9 @@
   \end{tabularx}
 }
 
-\newcommand{\researchentry}[3]{%
-  \par\noindent\begin{minipage}{\textwidth}
-  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
-    \textbf{#1} & \rightmeta{#2}
-  \end{tabularx}
-  \begin{itemize}[leftmargin=1.15em,labelsep=0.55em,itemsep=4pt,topsep=5pt,parsep=0pt,partopsep=0pt]
-    #3
-  \end{itemize}
-  \end{minipage}\par\vspace{11pt}
+\newcommand{\pubtopic}[2]{%
+  \subsection*{#1}
+  {\fontsize{10}{14}\selectfont #2\par}\vspace{8pt}
 }
 
 \newcommand{\pub}[1]{\item #1}
@@ -147,8 +148,6 @@
   \quad | \quad \href{https://scholar.google.com/citations?user=LZgGl1kAAAAJ\&hl=zh-CN}{Google Scholar}}
 \end{center}
 
-\section*{Research Interests}
-Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Models; Clinical AI Agents.
 \section*{Education}
 \educationentry
   {Beijing University of Posts and Telecommunications}
@@ -165,32 +164,24 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {Sept. 2021--July 2025}
   {Chengdu, China}
 
-\section*{Research Experience}
-\researchentry
-  {CAPRA: Multimodal Auditing under Missing Clinical Metadata}
-  {ACM MM 2026 Oral}
-  {\item Led CAPRA, a semantic-visual multimodal framework that fuses medical images with proxy-axis tokens and calibrated posteriors for missing-metadata subgroup auditing.
-   \item Validated fundus, dermoscopy, and chest-radiography tasks under distribution shift, improving worst-group accuracy in 14 of 15 learner--dataset settings.}
+\section*{Publications and Manuscripts}
+\pubtopic{Multimodal Medical Imaging}
+  {I combine retinal images with anatomical priors and language to localize clinically relevant evidence. MedFuse uses vascular priors for lesion segmentation, while REFINE retrieves images and grounds queries about lesion type, location, and morphology.}
 
-\researchentry
-  {MedFuse: Anatomical-Prior Fusion for Retinal Lesion Segmentation}
-  {FCS 2026}
-  {\item Led technical development with an ophthalmologist at Peking University First Hospital, integrating RGB fundus features with retinal vascular priors for diabetic-retinopathy lesion segmentation.
-   \item Evaluated a hierarchical dual-encoder fusion pipeline on DDR and IDRiD across five backbones, including annotation-free priors from a multimodal large language model.}
+\pubentry
+  {MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}
+  {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
+  {\textit{Frontiers of Computer Science} (\textbf{FCS}), 2026.}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/medfuse-fcs-2026.pdf}{Paper}}
 
-\section*{Manuscripts}
 \pubentry
   {Learning to ground compositional medical queries in retinal images}
   {Yawen Li, \textbf{Yan Li}, Jingbin Niu, Yingxia Shao, and \corrauth{Guanhua Ye}.}
   {In submission to \textit{Information Fusion}.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/refine-retinal-grounding.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/REFINE}{Code}}
 
-\section*{Teaching}
-\institutionheader{Beijing University of Posts and Telecommunications}
-\teachingentry{Big Data and Intelligent Management}{Fall 2025, Fall 2026}{co-designed a 130-student course for early-stage master's and PhD students.}
-
-\clearpage
-\section*{Peer-Reviewed Publications}
+\pubtopic{Medical AI Evaluation and Reliability}
+  {I study how missing metadata and evaluation choices can hide model failures. CAPRA uses calibrated image-derived proxies to audit subgroups in medical imaging, while our short-answer VQA study shows how evaluator and prompt choices affect benchmark scores.}
 
 \pubentry[%
   \textbf{Outstanding Paper Award}, Responsible Multimedia Theme (Top 5\%).\par
@@ -206,6 +197,11 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {\textit{ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/vqa-evaluator-acm-mm-2026.pdf}{Paper}}
 
+\clearpage
+\section*{Publications and Manuscripts (Continued)}
+\pubtopic{Representation Learning}
+  {I develop representations that preserve information lost in standard tabular pipelines. SemantiQ retains the meaning of questionnaire responses by encoding them in context, while FeBT balances heterogeneous feature groups for corporate ESG forecasting.}
+
 \pubentry
   {Rethink Representation Learning for Questionnaire Data}
   {Guanhua Ye, Jifeng He, \textbf{Yan Li}, Junping Du, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Yawen Li}.}
@@ -217,12 +213,6 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {Yawen Li, Mengyu Zhuang, \corrauth{Guanhua Ye}, \textbf{Yan Li}, Junheng Wang, Jinyi Zhou, and Pengfei Zhang.}
   {\textit{IEEE Transactions on Knowledge and Data Engineering} (\textbf{TKDE}), 2025.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/febt-tkde-2025.pdf}{Paper}}
-
-\pubentry
-  {MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}
-  {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
-  {\textit{Frontiers of Computer Science} (\textbf{FCS}), 2026.}
-  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/medfuse-fcs-2026.pdf}{Paper}}
 
 \section*{Conference Presentations}
 \presentationentry{``Hidden Subgroup Analysis under Missing Metadata in Medical Imaging''}
@@ -247,6 +237,10 @@ Trustworthy Medical AI; Multimodal AI for Healthcare; Medical Vision-Language Mo
   {Oral Presentation at IEEE BigComp 2026, Guangzhou, China.}
   {Feb. 2026}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf}{Slides}}
+
+\section*{Teaching}
+\institutionheader{Beijing University of Posts and Telecommunications}
+\teachingentry{Big Data and Intelligent Management}{Fall 2025, Fall 2026}{co-designed a 130-student course for early-stage master's and PhD students.}
 
 \section*{Honors and Awards}
 \institutionheader{University of Electronic Science and Technology of China}
