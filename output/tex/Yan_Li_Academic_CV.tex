@@ -50,7 +50,7 @@
 \titlespacing*{\section}{0pt}{18pt}{9pt}
 
 \titleformat{\subsection}
-  {\fontsize{11}{14}\selectfont\bfseries\color{ink}}
+  {\fontsize{12}{15}\selectfont\bfseries\scshape\color{accent}}
   {}
   {0pt}
   {#1}
@@ -104,7 +104,9 @@
   \begin{minipage}{\textwidth}
     \RaggedRight\hyphenpenalty=10000
     {\fontsize{10}{13}\selectfont\textbf{#2}\par}\vspace{3pt}
-    {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
+    \if\relax\detokenize{#3}\relax\else
+      {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
+    \fi
     \sbox{\publinks}{#5}%
     \begin{minipage}[t]{\dimexpr\linewidth-\wd\publinks-8pt\relax}
       \RaggedRight\hyphenpenalty=10000
@@ -181,10 +183,10 @@
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/refine-retinal-grounding.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/REFINE}{Code}}
 
 \pubtopic{Medical AI Evaluation and Reliability}
-  {I study how missing metadata and evaluation choices can hide model failures. CAPRA uses calibrated image-derived proxies to audit subgroups in medical imaging, while our short-answer VQA study shows how evaluator and prompt choices affect benchmark scores.}
+  {I study how missing metadata and evaluation design can distort model assessment. CAPRA audits medical imaging subgroups when metadata are missing. My work on short-answer VQA and medical fairness examines how scoring rules, prompts, and response formats affect benchmark conclusions.}
 
 \pubentry[%
-  \textbf{Outstanding Paper Award}, Responsible Multimedia Theme (Top 5\%).\par
+  \textbf{Outstanding Paper Award}, Responsible Multimedia Theme.\par
   \textbf{Oral presentation.} Selected as one of \textbf{168} main-track oral papers from \textbf{7,103} reviewed submissions.]
   {Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}
   {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
@@ -196,6 +198,12 @@
   {Guanhua Ye, Jingbin Niu, \textbf{Yan Li}, Meiyu Liang, Zhe Xue, Yingxia Shao, and \corrauth{Yawen Li}.}
   {\textit{ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/vqa-evaluator-acm-mm-2026.pdf}{Paper}}
+
+\pubentry
+  {What Do Multiple-Choice Medical Fairness Benchmarks Measure? Selective Dependence and Surface-Dependent Audit Displacement}
+  {}
+  {\textit{Manuscript}.}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/what-do-medical-fairness-benchmarks-measure.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/ClinSDA400}{Code}}
 
 \clearpage
 \section*{Publications and Manuscripts (Continued)}
@@ -243,6 +251,10 @@
 \teachingentry{Big Data and Intelligent Management}{Fall 2025, Fall 2026}{co-designed a 130-student course for early-stage master's and PhD students.}
 
 \section*{Honors and Awards}
+\institutionheader{Beijing University of Posts and Telecommunications}
+\honorentry{First-Class Scholarship}{2026}
+
+\vspace{4pt}
 \institutionheader{University of Electronic Science and Technology of China}
 \honorentry{Certificate for Honors Research}{2025}
 \honorentry{``Academic Star'' Award of School of Management and Economics (sole recipient)}{2024}

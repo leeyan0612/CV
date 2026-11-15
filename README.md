@@ -19,10 +19,7 @@
 - **CCF BigData 2026:** Auditing Historical Clinical Queries with Missing Availability Time ([Paper](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/refs/heads/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf))
 - **ACM MM 2026:** Hidden Subgroup Analysis under Missing Metadata in Medical Imaging ([Poster](https://github.com/leeyan0612/CV/blob/main/posters/capra-acm-mm-2026.pdf) | [Slides](https://github.com/leeyan0612/CV/blob/main/slides/capra-acm-mm-2026.pdf)). Rio de Janeiro, Brazil; Oral SmVI, November 14, 2026, 11:00-12:30, Oceania VI-VII; CAPRA talk: 12:12-12:30. [Official programme](https://2026.acmmm.org/site/technical-programme.html).
 
-## Manuscript Under Review
+## Manuscripts
 
-- [What Do Multiple-Choice Medical Fairness Benchmarks Measure? Selective Dependence and Surface-Dependent Audit Displacement](https://github.com/leeyan0612/CV/blob/refs/heads/main/papers/what-do-medical-fairness-benchmarks-measure.pdf)
-
-## Manuscript in Submission
-
+- **What Do Multiple-Choice Medical Fairness Benchmarks Measure? Selective Dependence and Surface-Dependent Audit Displacement.** [Paper](https://github.com/leeyan0612/CV/blob/main/papers/what-do-medical-fairness-benchmarks-measure.pdf) | [Code](https://github.com/leeyan0612/ClinSDA400)
 - **Learning to ground compositional medical queries in retinal images.** In submission to *Information Fusion*. [Paper](https://github.com/leeyan0612/CV/blob/main/papers/refine-retinal-grounding.pdf) | [Code](https://github.com/leeyan0612/REFINE)
