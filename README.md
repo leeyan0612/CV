@@ -21,5 +21,4 @@
 
 ## Manuscripts
 
-- **What Do Multiple-Choice Medical Fairness Benchmarks Measure? Selective Dependence and Surface-Dependent Audit Displacement.** [Paper](https://github.com/leeyan0612/CV/blob/main/papers/what-do-medical-fairness-benchmarks-measure.pdf) | [Code](https://github.com/leeyan0612/ClinSDA400)
 - **Learning to ground compositional medical queries in retinal images.** In submission to *Information Fusion*. [Paper](https://github.com/leeyan0612/CV/blob/main/papers/refine-retinal-grounding.pdf) | [Code](https://github.com/leeyan0612/REFINE)
