@@ -99,7 +99,7 @@
 \newcommand{\pub}[1]{\item #1}
 
 \newsavebox{\publinks}
-\newcommand{\pubentry}[5][]{%
+\newcommand{\pubentry}[6][]{%
   \par\noindent
   \begin{minipage}{\textwidth}
     \RaggedRight\hyphenpenalty=10000
@@ -116,6 +116,8 @@
       \par\vspace{4pt}
       {\fontsize{9.5}{12.5}\selectfont\color{accent}#1\par}
     \fi
+    \par\vspace{3pt}
+    {\fontsize{9.5}{12.5}\selectfont #6\par}
   \end{minipage}\par\vspace{9pt}
 }
 
@@ -124,12 +126,10 @@
 }
 
 \newcommand{\presentationentry}[4]{%
-  \par\noindent\begin{minipage}{\textwidth}
-  \begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}X r@{}}
-    {\fontsize{10}{13}\selectfont\textbf{#1}\par} & \rightmeta{#3}\\[2pt]
-    {\fontsize{9.5}{12.5}\selectfont\textcolor{muted}{#2}\par} & \mbox{#4}
-  \end{tabularx}
-  \end{minipage}\par
+  \alignedline{{\fontsize{9.5}{13}\selectfont\textbf{#1}\enspace\textcolor{muted}{(#2)}}}{%
+    \presentationlink{#3}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}%
+    \presentationlink{#4}{Slides}%
+  }\par\vspace{4pt}%
 }
 
 \newcommand{\teachingentry}[3]{%
@@ -168,77 +168,70 @@
 
 \section*{Publications and Manuscripts}
 \pubtopic{Multimodal Medical Imaging}
-  {I integrate clinical knowledge and anatomical priors into imaging models to retrieve relevant images and localize supporting lesions. REFINE builds a dataset of compositional retinal queries about lesion type, anatomical location, and morphology, linking image retrieval to lesion localization. MedFuse uses retinal vasculature as an anatomical prior to segment diabetic retinopathy lesions.}
+  {I use clinical language and anatomy to guide image retrieval, lesion localization, and segmentation.}
 
 \pubentry
   {MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}
   {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
   {\textit{Frontiers of Computer Science} (\textbf{FCS}), 2026.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/medfuse-fcs-2026.pdf}{Paper}}
+  {Led development of a dual-encoder model that uses retinal vessel priors, with an ophthalmologist at Peking University First Hospital. Improved mIoU and mAUPR across five backbones on DDR and IDRiD.}
 
 \pubentry
   {Learning to ground compositional medical queries in retinal images}
   {Yawen Li, \textbf{Yan Li}, Jingbin Niu, Yingxia Shao, and \corrauth{Guanhua Ye}.}
   {In submission to \textit{Information Fusion}.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/refine-retinal-grounding.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/REFINE}{Code}}
+  {Led compositional query modeling and adaptive supervision for joint retinal image retrieval and lesion localization. Evaluated on three datasets and seven vision--language model families.}
 
 \pubtopic{Medical AI Evaluation and Reliability}
-  {I study evaluation reliability and subgroup fairness in medical AI. CAPRA identifies underperforming subgroups when deployment metadata are missing and supplies subgroup estimates to robust learners to improve worst-group performance. Our short-answer VQA study shows that scores for identical answers vary by evaluator.}
+  {I study how subgroup disparities and scoring rules can hide failures in medical and multimodal AI.}
 
 \pubentry[%
   \textbf{Outstanding Paper Award}, Responsible Multimedia Theme.\par
-  \textbf{Oral presentation.} Selected as one of \textbf{168} main-track oral papers from \textbf{7,103} reviewed submissions.]
+  \textbf{Oral} (Rio de Janeiro, Nov. 2026), one of \textbf{168} main-track oral papers from \textbf{7,103} reviewed submissions.]
   {Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}
   {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
   {\textit{ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
-  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/capra-acm-mm-2026.pdf}{Paper}}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/capra-acm-mm-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/posters/capra-acm-mm-2026.pdf}{Poster}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/slides/capra-acm-mm-2026.pdf}{Slides}}
+  {Led the design of calibrated subgroup inference from medical images when metadata are missing. Using inferred subgroups in robust training improved worst-group accuracy in 14 of 15 learner--dataset comparisons.}
 
 \pubentry
   {What Does Your Short-Answer VQA Score Actually Measure? Evaluator-Dependent Instability in Multimodal Short-Answer Benchmarks}
   {Guanhua Ye, Jingbin Niu, \textbf{Yan Li}, Meiyu Liang, Zhe Xue, Yingxia Shao, and \corrauth{Yawen Li}.}
   {\textit{ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/vqa-evaluator-acm-mm-2026.pdf}{Paper}}
+  {A semantic audit covered over 37,000 rejected answers. On ST-VQA, up to 47.7\% of answers rejected by the official scorer were judged semantically acceptable.}
 
 \clearpage
 \section*{Publications and Manuscripts (Continued)}
 \pubtopic{Representation Learning and Forecasting}
-  {I develop representations of structured data for downstream analysis and prediction. SemantiQ encodes questionnaire responses in context to preserve their meaning. FeBT balances heterogeneous feature groups to model their contributions to corporate ESG forecasts.}
+  {I study structured-data representations that preserve meaning and balance features for prediction.}
 
 \pubentry
   {Rethink Representation Learning for Questionnaire Data}
   {Guanhua Ye, Jifeng He, \textbf{Yan Li}, Junping Du, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Yawen Li}.}
   {\textit{AAAI Conference on Artificial Intelligence} (\textbf{AAAI}), 2026.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/questionnaire-representation-aaai-2026.pdf}{Paper}}
+  {SemantiQ uses retrieval-augmented generation to encode questionnaire responses in context, outperforming baselines in accuracy and macro-F1 on three questionnaire datasets.}
 
 \pubentry[\textbf{Outstanding Paper Award}, 3rd Academic Conference on Data Intelligence and Management (2023).]
   {FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting}
   {Yawen Li, Mengyu Zhuang, \corrauth{Guanhua Ye}, \textbf{Yan Li}, Junheng Wang, Jinyi Zhou, and Pengfei Zhang.}
   {\textit{IEEE Transactions on Knowledge and Data Engineering} (\textbf{TKDE}), 2025.}
   {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/febt-tkde-2025.pdf}{Paper}}
+  {FeBT balances heterogeneous inputs with masked autoencoders before Transformer-based forecasting, improving ESG score and rating predictions on real-world company data.}
 
 \section*{Conference Presentations}
-\presentationentry{``Hidden Subgroup Analysis under Missing Metadata in Medical Imaging''}
-  {Oral Presentation at ACM MM 2026, Rio de Janeiro, Brazil.}
-  {Nov. 2026}
-  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/posters/capra-acm-mm-2026.pdf}{Poster}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/slides/capra-acm-mm-2026.pdf}{Slides}}
-
-\vspace{0.45em}
-\presentationentry{``Auditing Historical Clinical Queries with Missing Availability Time''}
-  {Oral Presentation at CCF BigData 2026, Harbin, China.}
-  {Aug. 2026}
-  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}{Slides}}
-
-\vspace{0.45em}
-\presentationentry{``Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination''}
-  {Oral Presentation at CINT 2026, Hangzhou, China.}
-  {May 2026}
-  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/slot-based-evidence-routing-cint-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/slides/slot-based-evidence-routing-cint-2026.pdf}{Slides}}
-
-\vspace{0.45em}
-\presentationentry{``Trust-free Personalized Decentralized Learning''}
-  {Oral Presentation at IEEE BigComp 2026, Guangzhou, China.}
-  {Feb. 2026}
-  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf}{Slides}}
+\presentationentry{Auditing Historical Clinical Queries with Missing Availability Time}{CCF BigData, 2026}
+  {https://github.com/leeyan0612/CV/blob/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}
+  {https://github.com/leeyan0612/CV/blob/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}
+\presentationentry{Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination}{CINT, 2026}
+  {https://github.com/leeyan0612/CV/blob/main/papers/slot-based-evidence-routing-cint-2026.pdf}
+  {https://github.com/leeyan0612/CV/blob/main/slides/slot-based-evidence-routing-cint-2026.pdf}
+\presentationentry{Trust-free Personalized Decentralized Learning}{IEEE BigComp, 2026}
+  {https://github.com/leeyan0612/CV/blob/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}
+  {https://github.com/leeyan0612/CV/blob/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf}
 
 \section*{Teaching}
 \institutionheader{Beijing University of Posts and Telecommunications}
