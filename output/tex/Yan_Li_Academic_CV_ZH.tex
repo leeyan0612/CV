@@ -1,0 +1,253 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,left=18mm,right=18mm,top=17mm,bottom=18mm,footskip=9mm]{geometry}
+\usepackage{fontspec}
+\usepackage[UTF8,scheme=plain,fontset=none]{ctex}
+\setCJKmainfont{FandolHei-Regular.otf}[BoldFont=FandolHei-Bold.otf]
+\setmainfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{315F75}
+\definecolor{ink}{HTML}{303438}
+\definecolor{muted}{HTML}{666B70}
+\definecolor{rulegray}{HTML}{BEC4C8}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\fontsize{8}{10}\selectfont\color{muted}\thepage}
+\renewcommand{\normalsize}{\fontsize{10.5}{14.5}\selectfont}
+\AtBeginDocument{\normalsize\color{ink}}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1}
+\emergencystretch=1.5em
+\setlist[itemize]{leftmargin=1.3em,itemsep=0.24em,topsep=0.22em,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=2.05em,itemsep=0.45em,topsep=0.28em,parsep=0pt,partopsep=0pt}
+\renewcommand{\arraystretch}{1.08}
+\RaggedRight
+
+\titleformat{\section}
+  {\fontsize{13}{16}\selectfont\bfseries\scshape\color{ink}}
+  {}
+  {0pt}
+  {#1\nobreak\hspace{0.65em}{\color{rulegray}\leaders\hrule height 0.45pt\hfill\kern0pt}}
+\titlespacing*{\section}{0pt}{18pt}{9pt}
+
+\titleformat{\subsection}
+  {\fontsize{12}{15}\selectfont\bfseries\scshape\color{accent}}
+  {}
+  {0pt}
+  {#1}
+\titlespacing*{\subsection}{0pt}{10pt}{5pt}
+
+\newcommand{\rightmeta}[1]{{\color{muted}\fontsize{9}{12}\selectfont\mbox{#1}}}
+
+\newcommand{\alignedline}[2]{%
+  \noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    #1 & \rightmeta{#2}
+  \end{tabular*}%
+}
+
+\newcommand{\datedline}[2]{%
+  \if\relax\detokenize{#2}\relax
+    #1\par
+  \else
+    \alignedline{#1}{#2}\par
+  \fi
+}
+
+\newcommand{\roleline}[2]{%
+  \alignedline{\itshape #1}{#2}\par
+}
+
+\newcommand{\institutionheader}[1]{%
+  \par\noindent{\fontsize{9.5}{12}\selectfont\bfseries\color{muted}#1}\par\vspace{5pt}
+}
+
+\newcommand{\corrmark}{\textsuperscript{\textcolor{accent}{*}}}
+\newcommand{\corrauth}[1]{#1\corrmark}
+
+\newcommand{\educationentry}[5]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+    \textbf{#1} & \rightmeta{#5}\\[2pt]
+    #2 & \rightmeta{#4}\\[2pt]
+    \multicolumn{2}{@{}l@{}}{{\fontsize{9.5}{13}\selectfont\color{muted}#3}}
+  \end{tabularx}
+}
+
+\newcommand{\pubtopic}[2]{%
+  \subsection*{#1}
+  {\fontsize{10}{14}\selectfont #2\par}\vspace{8pt}
+}
+
+\newcommand{\pub}[1]{\item #1}
+
+\newsavebox{\publinks}
+\newcommand{\pubentry}[6][]{%
+  \par\noindent
+  \begin{minipage}{\textwidth}
+    \RaggedRight\hyphenpenalty=10000
+    {\fontsize{10}{13}\selectfont\textbf{#2}\par}\vspace{3pt}
+    \if\relax\detokenize{#3}\relax\else
+      {\fontsize{9.5}{12.5}\selectfont #3\par}\vspace{2pt}
+    \fi
+    \sbox{\publinks}{#5}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\wd\publinks-8pt\relax}
+      \RaggedRight\hyphenpenalty=10000
+      {\fontsize{9.2}{12}\selectfont\textcolor{muted}{#4}\par}
+    \end{minipage}\hfill\usebox{\publinks}%
+    \if\relax\detokenize{#1}\relax\else
+      \par\vspace{4pt}
+      {\fontsize{9.5}{12.5}\selectfont\color{accent}#1\par}
+    \fi
+    \par\vspace{3pt}
+    {\fontsize{9.5}{12.5}\selectfont #6\par}
+  \end{minipage}\par\vspace{9pt}
+}
+
+\newcommand{\presentationlink}[2]{%
+  \href{#1}{\textcolor{accent}{\fontsize{9}{12}\selectfont #2}}%
+}
+
+\newcommand{\presentationentry}[4]{%
+  \alignedline{{\fontsize{9.5}{13}\selectfont\textbf{#1}\textcolor{muted}{（#2）}}}{%
+    \presentationlink{#3}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}%
+    \presentationlink{#4}{Slides}%
+  }\par\vspace{4pt}%
+}
+
+\newcommand{\teachingentry}[3]{%
+  \alignedline{\textbf{#1}}{#2}\par\vspace{2pt}
+  {\fontsize{9.5}{12.5}\selectfont\color{muted}助教；#3\par}\vspace{6pt}
+}
+
+\newcommand{\honorentry}[2]{%
+  \alignedline{#1}{#2}\par\vspace{4pt}
+}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{30}{35}\selectfont \textbf{李严}}\\[7pt]
+  北京邮电大学 \\[4pt]
+  {\fontsize{9.5}{13}\selectfont\color{muted}北京 \quad | \quad \href{mailto:liyanly@bupt.edu.cn}{liyanly@bupt.edu.cn}
+  \quad | \quad \href{https://scholar.google.com/citations?user=LZgGl1kAAAAJ\&hl=zh-CN}{Google Scholar}}
+\end{center}
+
+\section*{教育背景}
+\educationentry
+  {北京邮电大学}
+  {管理科学与工程硕士}
+  {导师：\href{https://teacher.bupt.edu.cn/liyawen}{李雅文}；联合导师：\href{https://teacher.bupt.edu.cn/yeguanhua}{叶冠华}}
+  {2025年9月至今}
+  {北京}
+
+\vspace{10pt}
+\educationentry
+  {电子科技大学}
+  {金融学、电子信息工程双学士学位}
+  {毕业论文导师：\href{https://www.mgmt.uestc.edu.cn/mgmt/jsnry.jsp?urltype=news.NewsContentUrl\&wbtreeid=1020\&wbnewsid=12383}{刘波}}
+  {2021年9月至2025年7月}
+  {成都}
+
+\section*{论文与手稿}
+\pubtopic{多模态医学影像分析}
+  {我将临床语言和解剖先验融入影像模型，研究如何检索符合临床查询的图像，并定位、分割相关病灶。}
+
+\pubentry
+  {MedFuse: A Multi-source Data Fusion Framework for Diabetic Retinopathy Lesion Segmentation}
+  {Jiantong Du, \textbf{Yan Li}, Yawen Li, Liwen Liao, Zhihao Zhao, and \corrauth{Guanhua Ye}.}
+  {\textit{Frontiers of Computer Science} (\textbf{FCS}), 2026.}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/medfuse-fcs-2026.pdf}{Paper}}
+  {与北京大学第一医院眼科医生合作，主导基于血管先验的双编码器融合。在 DDR 和 IDRiD 上，5 种骨干网络的 mIoU 和 mAUPR 均得到提升。}
+
+\pubentry
+  {Learning to ground compositional medical queries in retinal images}
+  {Yawen Li, \textbf{Yan Li}, Jingbin Niu, Yingxia Shao, and \corrauth{Guanhua Ye}.}
+  {\textit{Information Fusion}（投稿中）。}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/refine-retinal-grounding.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/REFINE}{Code}}
+  {主导组合查询建模与动态加权训练，实现眼底图像检索与病灶证据定位。在 3 个数据集和 7 类视觉语言模型上验证。}
+
+\pubtopic{医疗 AI 评测与可靠性}
+  {我研究医疗与多模态 AI 的评测可靠性，关注子群差异和评分规则如何掩盖模型失效。}
+
+\pubentry[%
+  \textbf{Outstanding Paper Award}（Responsible Multimedia 主题）。\par
+  \textbf{Oral}（2026年11月，里约热内卢）：入选主会 \textbf{168} 篇 Oral 论文之一（共 \textbf{7,103} 篇送审论文）。]
+  {Beyond Metadata: CAPRA for Hidden Subgroup Analysis under Missing Metadata in Medical Imaging}
+  {Yawen Li, \textbf{Yan Li}, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Guanhua Ye}.}
+  {\textit{ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/capra-acm-mm-2026.pdf}{Paper}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/posters/capra-acm-mm-2026.pdf}{Poster}\hspace{0.5em}\textcolor{rulegray}{|}\hspace{0.5em}\presentationlink{https://github.com/leeyan0612/CV/blob/main/slides/capra-acm-mm-2026.pdf}{Slides}}
+  {主导缺失元数据条件下的影像子群推断与概率校准。将推断结果用于鲁棒训练后，15 组学习方法与数据集组合中有 14 组提升了最差子群准确率。}
+
+\pubentry
+  {What Does Your Short-Answer VQA Score Actually Measure? Evaluator-Dependent Instability in Multimodal Short-Answer Benchmarks}
+  {Guanhua Ye, Jingbin Niu, \textbf{Yan Li}, Meiyu Liang, Zhe Xue, Yingxia Shao, and \corrauth{Yawen Li}.}
+  {\textit{ACM International Conference on Multimedia} (\textbf{ACM MM}), 2026.}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/vqa-evaluator-acm-mm-2026.pdf}{Paper}}
+  {参与研究问题设计与论文写作。研究对逾 3.7 万条被判错的答案进行语义复核，发现 ST-VQA 上被判错答案中语义可接受的比例最高达 47.7\%。}
+
+\clearpage
+\section*{论文与手稿（续）}
+\pubtopic{表征学习与预测}
+  {我研究如何保留结构化数据的语义，并平衡异构特征，以改善下游预测。}
+
+\pubentry
+  {Rethink Representation Learning for Questionnaire Data}
+  {Guanhua Ye, Jifeng He, \textbf{Yan Li}, Junping Du, Zhe Xue, Yingxia Shao, Meiyu Liang, and \corrauth{Yawen Li}.}
+  {\textit{AAAI Conference on Artificial Intelligence} (\textbf{AAAI}), 2026.}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/questionnaire-representation-aaai-2026.pdf}{Paper}}
+  {参与论文写作与修订。SemantiQ 利用检索增强生成保留问卷题目与回答的语义，在 3 个问卷数据集上的准确率和宏 F1 均优于基线。}
+
+\pubentry[\textbf{Outstanding Paper Award}，第三届数据智能与管理学术会议（2023年）。]
+  {FeBT: A Feature Balancing Transformer for Corporate ESG Forecasting}
+  {Yawen Li, Mengyu Zhuang, \corrauth{Guanhua Ye}, \textbf{Yan Li}, Junheng Wang, Jinyi Zhou, and Pengfei Zhang.}
+  {\textit{IEEE Transactions on Knowledge and Data Engineering} (\textbf{TKDE}), 2025.}
+  {\presentationlink{https://github.com/leeyan0612/CV/blob/main/papers/febt-tkde-2025.pdf}{Paper}}
+  {参与研究问题设计、第一阶段模型搭建及论文写作与修订。FeBT 使用掩码自编码器平衡输入 Transformer 的异构特征，并在真实企业数据上改善了 ESG 评分和评级预测。}
+
+\section*{学术会议报告}
+\presentationentry{Auditing Historical Clinical Queries with Missing Availability Time}{CCF BigData，2026}
+  {https://github.com/leeyan0612/CV/blob/main/papers/chronoguard-ehr-ccf-bigdata-2026.pdf}
+  {https://github.com/leeyan0612/CV/blob/main/slides/auditing-historical-clinical-queries-ccf-bigdata-2026.pdf}
+\presentationentry{Slot-Based Evidence Routing for Budgeted Multi-Agent Coordination}{CINT，2026}
+  {https://github.com/leeyan0612/CV/blob/main/papers/slot-based-evidence-routing-cint-2026.pdf}
+  {https://github.com/leeyan0612/CV/blob/main/slides/slot-based-evidence-routing-cint-2026.pdf}
+\presentationentry{Trust-free Personalized Decentralized Learning}{IEEE BigComp，2026}
+  {https://github.com/leeyan0612/CV/blob/main/papers/trust-free-decentralized-learning-bigcomp-2026.pdf}
+  {https://github.com/leeyan0612/CV/blob/main/slides/trust-free-personalized-decentralized-learning-bigcomp-2026.pdf}
+
+\section*{教学经历}
+\institutionheader{北京邮电大学}
+\teachingentry{大数据与智能管理}{2025年秋季、2026年秋季}{共同设计面向低年级硕士和博士生的课程，班级规模为 130 人。}
+
+\section*{荣誉与奖励}
+\institutionheader{北京邮电大学}
+\honorentry{一等奖学金}{2025、2026年}
+
+\vspace{4pt}
+\institutionheader{电子科技大学}
+\honorentry{荣誉研究证书}{2025年}
+\honorentry{经济与管理学院“学术之星”（唯一获奖者）}{2024年}
+\honorentry{优秀学生奖学金}{2024年}
+\honorentry{模范学生奖学金}{2023年}
+
+\end{document}
